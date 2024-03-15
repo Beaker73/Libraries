@@ -4,13 +4,19 @@
 	"plugins": [
 		"@typescript-eslint",
 		"deprecation",
-		"promise"
+		"promise",
+		"sonarjs",
+		"compat",
+		"vitest"
 	],
 	"extends": [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/eslint-recommended",
 		"plugin:@typescript-eslint/recommended",
-		"plugin:promise/recommended"
+		"plugin:promise/recommended",
+		"plugin:sonarjs/recommended",
+		"plugin:compat/recommended",
+		"plugin:vitest/recommended"
 	],
 	"rules": {
 		"indent": "off",
@@ -100,5 +106,8 @@
 				".tsx"
 			]
 		}
+	},
+	"env": {
+		"browser": true
 	}
 }

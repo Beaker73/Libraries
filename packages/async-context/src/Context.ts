@@ -26,8 +26,10 @@ export function callWithContext<Context = unknown, Result = void>(func: () => Pr
 	// store context the dev provided
 	contextStorage[id] = context;
 
-	// wrap the eval and the function begin executing with context in a promise.
+	// Wrap the eval and the function begin executing with context in a promise.
 	// The result will be resolved, and any exception will be rejected.
+
+	// eslint-disable-next-line compat/compat -- if browser does not support promise, then the whole library is unusable for them as it is for async...
 	return new Promise(
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars -- used inside eval
 		(resolve, reject) =>

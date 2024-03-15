@@ -15,6 +15,7 @@ describe("context", () =>
 			console.debug(ctx);
 			expect(ctx).toStrictEqual({ fruit: "banana" });
 
+			// eslint-disable-next-line compat/compat -- this is testing, ignore compat
 			await new Promise(resolve => setTimeout(resolve, 1000));
 
 			const ctx2 = getContext();
