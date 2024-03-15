@@ -17,7 +17,7 @@ const contextStorage: Record<string, unknown> = {};
  * @returns The result of the function
  */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars -- used inside eval
-export function callWithContext<Context, Result>(func: () => Promise<Result>, context: Context): Promise<Result>
+export function callWithContext<Context = unknown, Result = void>(func: () => Promise<Result>, context: Context): Promise<Result>
 {
 	// generate unique id and a marker containing that id
 	const id = v4().replace(/-/gi, "");
@@ -67,7 +67,7 @@ export function callWithContext<Context, Result>(func: () => Promise<Result>, co
  */
 export function tryGetContext<Context = unknown>(): Context | undefined
 {
-	const [context, ] = getContextOrFailureReason<Context>();
+	const [context, _] = getContextOrFailureReason<Context>();
 	if (!context)
 		return undefined;
 
@@ -104,7 +104,7 @@ function getContextOrFailureReason<Context = unknown>(): [context: Context, reas
 	// find the first matching context name
 	const match = stack.match(/_\$context_id\$_(?<id>[0-9a-f]{32})_\$/);
 	if (!match || !match.groups || !match.groups.id)
-		return fail(`No context found in the stack trace`);
+		return fail("No context found in the stack trace");
 
 	// check if context exists in storage
 	if (!(match.groups.id in contextStorage))
@@ -113,7 +113,7 @@ function getContextOrFailureReason<Context = unknown>(): [context: Context, reas
 	// return context
 	return [
 		contextStorage[match.groups.id] as Context,
-		undefined
+		undefined,
 	];
 
 

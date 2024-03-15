@@ -1,0 +1,37 @@
+{
+	"files.associations": {
+		"**/*.yml": "azure-pipelines"
+	},
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"task.allowAutomaticTasks": "on",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit",
+		"source.fixAll": "never"
+	},
+	"editor.indentSize": "tabSize",
+	"editor.tabSize": 4,
+	"eslint.validate": [
+		"typescript"
+	],
+	"eslint.lintTask.enable": true,
+	"[typescript]": {
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "always"
+		}
+	},
+	"[typescriptreact]": {
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "always"
+		}
+	},
+	"vitest.enable": true,
+	"typescript.format.placeOpenBraceOnNewLineForFunctions": true,
+	"typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+	"javascript.format.placeOpenBraceOnNewLineForFunctions": true,
+	"javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+	"[typescript][typescriptreact]": {
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "always"
+		}
+	},
+}
