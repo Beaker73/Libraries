@@ -12,7 +12,7 @@
 		"dev": "vite",
 		"build": "tsc && vite build",
 		"preview": "vite preview",
-		"publish:npm": "npm run build && npm login && npm publish"
+		"publish:npm": "npm run build && npm publish"
 	},
 	"devDependencies": {
 		"@types/node": "^20.11.27",
@@ -34,5 +34,10 @@
 	"types": "dist/index.d.ts",
 	"browserslist": [
 		"defaults"
-	]
+	],
+	"dependencies": {
+		"@beaker73/async-context": "^0.1.2",
+		"fast-memoize": "^2.5.2",
+		"uuid": "^9.0.1"
+	}
 }

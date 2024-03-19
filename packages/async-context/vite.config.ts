@@ -13,7 +13,7 @@ export default defineConfig({
 			name: "async-context",
 			fileName: (format) => `index.${format}.js`,
 			entry: "src/index.ts",
-			formats: ["umd", "es"]
+			formats: ["umd", "es", "cjs"]
 		},
 		sourcemap: true,
 	},
