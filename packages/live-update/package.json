@@ -1,12 +1,12 @@
 {
-	"name": "@beaker73/xrm-live-update",
+	"name": "@beaker73/live-update",
 	"version": "0.1.0",
 	"type": "module",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/Beaker73/Libraries.git",
-		"directory": "packages/xrm-live-update"
+		"directory": "packages/live-update"
 	},
 	"scripts": {
 		"dev": "vite",
@@ -17,7 +17,6 @@
 	"devDependencies": {
 		"@types/node": "^20.11.27",
 		"@types/uuid": "^9.0.8",
-		"@types/xrm": "^9.0.79",
 		"browserslist": "^4.23.0",
 		"typescript": "^5.2.2",
 		"vite": "^5.1.6",
@@ -37,7 +36,6 @@
 	],
 	"dependencies": {
 		"@beaker73/async-context": "file:../async-context",
-		"@beaker73/live-update": "file:../live-update",
 		"fast-memoize": "^2.5.2",
 		"uuid": "^9.0.1"
 	}
