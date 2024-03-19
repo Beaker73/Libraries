@@ -44,6 +44,11 @@ export type LiveContext = {
 	 * @returns The recalled item, or undefined when we cannot recall the item
 	 */
 	recall<T>(key: string): T | undefined;
+
+	/**
+	 * Shared context as provided by your application, to use as you wish
+	 */
+	sharedContext?: unknown;
 };
 
 type WithId<T> = T & { __id: string };
@@ -63,8 +68,9 @@ export type MemoryNode = { item: unknown, onForget?: (item: unknown) => void };
 /**
  * Sets up live update on the provided render functions
  * @param renderFunctions List of render functions with business logic
+ * @param sharedContext (optional) a shared context that might be used by all functions or hooks your application uses.
  */
-export async function liveUpdates(renderFunctions: RenderFunction[]) 
+export async function liveUpdates(renderFunctions: RenderFunction[], sharedContext?: unknown)
 {
 	const storage: MemoryStore = {};
 
@@ -111,6 +117,7 @@ export async function liveUpdates(renderFunctions: RenderFunction[])
 				remember: (key, item, onForget) => remember(memory, key, item, onForget),
 				recognize: key => recognize(memory, key),
 				recall: key => recall(memory, key),
+				sharedContext,
 			};
 
 			try

@@ -21,20 +21,25 @@ export function forget(memory: Memory, oldTracker: MemoryTracker, newTracker: Me
 			delete memory[keyToForget];
 		}
 	}
-}export function isMemoryNode(node: MemoryNode | MemoryTracker | DependencyTracker): node is MemoryNode
+}
+
+export function isMemoryNode(node: MemoryNode | MemoryTracker | DependencyTracker): node is MemoryNode
 {
 	console.log(JSON.stringify(node));
 	return typeof node === "object" && node !== null && "item" in node;
 }
+
 export function remember<T = unknown>(storage: Memory, key: string, item: T, onForget?: (item: T) => void)
 {
 	storage[key] = { item, onForget: onForget as (item: unknown) => void } satisfies MemoryNode;
 	storage._$tracker[key] = true;
 }
+
 export function recognize(storage: Memory, key: string): boolean
 {
 	return typeof storage === "object" && storage !== null && key in storage;
 }
+
 export function recall<T>(storage: Memory, key: string): T | undefined
 {
 	if (recognize(storage, key))
