@@ -1,5 +1,7 @@
 import { describe, expect, test } from "vitest";
-import { Dependency, liveUpdates, useContext, useDependency, useEffect, useId } from "./LiveUpdate";
+import { Dependency } from "./Dependency";
+import { useContext, useDependency, useEffect, useId } from "./Hooks";
+import { liveUpdates } from "./LiveUpdate";
 
 describe("liveUpdates", () =>
 {
