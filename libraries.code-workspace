@@ -1,0 +1,35 @@
+{
+	"folders": [
+		{
+			"name": "async-context",
+			"path": "packages/async-context"
+		},
+		{
+			"name": "live-update",
+			"path": "packages/live-update"
+		},
+		{
+			"name": "xrm-metadata",
+			"path": "packages/xrm-metadata"
+		},
+		{
+			"name": "xrm-metadata-generator",
+			"path": "packages/xrm-metadata-generator"
+		},
+		{
+			"name": "xrm-live-update",
+			"path": "packages/xrm-live-update"
+		},
+		{
+			"name": "xrm-mocking",
+			"path": "packages/xrm-mocking"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"**/*.yml": "azure-pipelines"
+		},
+		"typescript.tsdk": "node_modules/typescript/lib",
+		"task.allowAutomaticTasks": "on"
+	}
+}

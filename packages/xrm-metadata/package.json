@@ -1,12 +1,12 @@
 {
-	"name": "@beaker73/xrm-live-update",
+	"name": "@beaker73/xrm-metadata",
 	"version": "0.1.0",
 	"type": "module",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/Beaker73/Libraries.git",
-		"directory": "packages/xrm-live-update"
+		"directory": "packages/xrm-metadata"
 	},
 	"scripts": {
 		"dev": "vite",
@@ -36,9 +36,6 @@
 		"defaults"
 	],
 	"dependencies": {
-		"@beaker73/async-context": "file:../async-context",
-		"@beaker73/live-update": "file:../live-update",
-		"@beaker73/xrm-metadata": "file:../xrm-metadata",
 		"fast-memoize": "^2.5.2",
 		"uuid": "^9.0.1"
 	}
